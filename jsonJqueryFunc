@@ -1,0 +1,167 @@
+//todoist_dictionary.completed_date
+//"MM"
+//determines if the date is this month, or today, etc. based on what strf is 
+function date_range_filter(date_input,strf){
+    if (date_input){
+      this_month = moment().format(strf) //01
+      completed_date_moment = new moment(date_input)
+      completed_month = completed_date_moment.format(strf)
+      return completed_month === this_month
+    }
+}
+
+//filter functions on the array
+//determine if todoist dictionary is recurring
+function filter_recurring_tasks(dictionary_object){
+  date_string = dictionary_object.date_string
+  date_string = date_string || ''
+  is_recurring = date_string.indexOf('every') != -1
+  return !is_recurring
+}
+
+function age_calculate_from_todoist_task(D){
+    date_added = D.date_added
+    a = new moment()
+    b = new moment(date_added)
+    age_days = a.diff(b,'days')
+    return age_days
+}
+
+//toodoist custom functions 
+function current_task_average_age(array){
+  //https://momentjs.com/docs/
+  age_sum = 0
+  array.forEach(function(D,index){
+    date_added = D.date_added
+    a = new moment()
+    b = new moment(date_added)
+    age_days = a.diff(b,'days')
+
+    age_sum = age_sum + age_days
+    //ages.push(age_days)
+  })
+  denom = array.length 
+  avg = age_sum/denom 
+  return avg 
+}
+
+//used to sum up the total amount of minutes or hours current tasks add up to 
+function aggregate_sum_array(array,key){
+  total = 0
+  array.forEach(function(D,index){
+    key_value = D[key]
+    key_value_float = parseFloat(key_value) || 0 //if it cant convert to a float, return 0
+    total = total + key_value_float
+  })
+  return total 
+}
+
+
+function median(values) {
+    values.sort( function(a,b) {return a - b;} );
+    var half = Math.floor(values.length/2);
+    if(values.length % 2)
+        return values[half];
+    else
+        return (values[half-1] + values[half]) / 2.0;
+}
+
+function daysInMonth (month, year) {
+    return new Date(year, month, 0).getDate();
+}
+
+function days_this_month(){
+  r = new Date()
+  return daysInMonth(r.getMonth()+1,r.getYear())
+}
+
+function metric_run_rate(metric){
+  r = new Date()
+  metric_per_day = metric/r.getDate()
+  run_rate = metric_per_day * days_this_month()
+  return run_rate
+}
+
+function today_goal_based_on_month_pace(goal_metric){
+  metric_per_day = goal_metric/days_this_month()
+  r = new Date()
+  run_rate = metric_per_day * r.getDate()
+  return run_rate
+}
+
+
+
+function current_task_median_age(array){
+  values_list = []
+    array.forEach(function(D,index){
+    date_added = D.date_added
+    a = new moment()
+    b = new moment(date_added)
+    age_days = a.diff(b,'days')
+    values_list.push(age_days)
+})
+return median(values_list)
+
+
+}
+
+function array_to_dictionary(array){
+  new_dict = {}
+  array.forEach(function(item,index){
+    new_dict[String(item.id)] = item
+  })
+  return new_dict
+}
+
+function label_minute_string_to_integer_append(label_dictionary){
+  label_string = label_dictionary.name
+  label_parsed = label_string.replace("min","")
+  potential_integer = parseInt(label_parsed)
+  is_word = isNaN(potential_integer)
+  if (is_word){
+    potential_integer =  0
+    return potential_integer
+  }
+  else {
+    return potential_integer
+  }
+  //label_dictionary['minute'] == potential_integer
+}
+
+//gets the duration from the task of how long expected to gtake
+function labels_add_from_labels_dictionary(labels_list,labels_dictionary){
+  label_list_is_undefined = labels_list == undefined
+  if (label_list_is_undefined){
+    return 0 
+  }
+  r = 0 
+  labels_list.forEach(function(item,index){
+    label_dict = labels_dictionary[item]
+    minute_number = label_minute_string_to_integer_append(label_dict)//label_dict.minute 
+    r = r + minute_number
+  })
+  return r 
+}
+
+
+function task_detail_append_dictionary(item,labels_dictionary,projects_dictionary){
+  if (filter_recurring_tasks(item)){
+    item['type'] = 'non-recurring'
+  }
+  else {
+    item['type'] = 'recurring'}
+  item['duration'] = labels_add_from_labels_dictionary(item.labels,labels_dictionary)
+  item['age'] = age_calculate_from_todoist_task(item)
+  return item 
+}
+
+
+//add custom values to the current tasks
+function task_detail_append_array(array,labels_dictionary,projects_dictionary){
+  l = []
+  array.forEach(function(item,index){
+      item = task_detail_append_dictionary(item,labels_dictionary,projects_dictionary)
+      l.push(item)
+    })
+  return l 
+}

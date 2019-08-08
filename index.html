@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBzYQ4uw4x09G49ESSPvHjTzkK6V-mK1cA",
+    authDomain: "todotrax-46c7d.firebaseapp.com",
+    databaseURL: "https://todotrax-46c7d.firebaseio.com",
+    projectId: "todotrax-46c7d",
+    storageBucket: "todotrax-46c7d.appspot.com",
+    messagingSenderId: "281399012269"
+  };
+  firebase.initializeApp(config);
+</script>
+    
+    <script src="https://rawgit.com/vderm9/jutility/master/messy_v1.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<!-- design for window -->
+<body ng-controller="ChatController">
+    <br>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Web Based Firebase Chat Application</div>
+            <div class="panel-body">
+                <p ng-repeat="m in messages">{{m.message}} - {{m.date | date:'medium'}}</p>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Message here..." ng-model="messageText">
+                </div>
+                <button type="submit" class="btn btn-default" ng-click="send()">Send</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

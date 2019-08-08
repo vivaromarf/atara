@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cruz Control</title>
+  <link href="https://cruz.site44.com/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cruz.site44.com/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="https://cruz.site44.com/css/animate.css" rel="stylesheet">
+  <link href=https://rawgit.com/vderm9/jutility/master/style.css rel="stylesheet">
+  <link href='https://cruzco.site44.com/lib/fullcalendar.min.css' rel='stylesheet' />
+  <link href='https://cruzco.site44.com/lib/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+  <link href='https://cruzco.site44.com/lib/scheduler.min.css' rel='stylesheet' />
+  <link href='https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css' rel='stylesheet' />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+
+
+
+
+
+
+    <!-- Mainly scripts -->
+    <script src="https://cruz.site44.com/js/jquery-3.1.1.min.js"></script>
+    <script src="https://cruz.site44.com/js/bootstrap.min.js"></script>
+    <script src="https://cruz.site44.com/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="https://cruz.site44.com/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="https://cruz.site44.com/js/plugins/flot/jquery.flot.js"></script>
+    <script src="https://cruz.site44.com/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="https://cruz.site44.com/js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="https://cruz.site44.com/js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="https://cruz.site44.com/js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="https://cruz.site44.com/js/plugins/flot/jquery.flot.symbol.js"></script>
+    <script src="https://cruz.site44.com/js/plugins/flot/curvedLines.js"></script>
+
+    <!-- Peity -->
+    <script src="https://cruz.site44.com/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="https://cruz.site44.com/js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="https://cruz.site44.com/js/inspinia.js"></script>
+    <script src="https://cruz.site44.com/js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="https://cruz.site44.com/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- Jvectormap -->
+    <script src="https://cruz.site44.com/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="https://cruz.site44.com/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+    <!-- Sparkline -->
+    <script src="https://cruz.site44.com/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- ChartJS-->
+    <script src="https://cruz.site44.com/js/plugins/chartJs/Chart.min.js"></script>
+
+    <!-- CodeMirror-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/mode/javascript/javascript.js"></script>
+
+    <!-- FirebaseJS-->
+    <script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+
+
+
+    <!-- Underscore-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+    <script src='https://cruzco.site44.com/lib/moment.min.js'></script>
+
+    <script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
+
+    <script src='https://rawgit.com/vderm9/jutility/master/jutility.js'></script>
+
+
+
+
+    <style>
+    html { height: 100%; }
+    body { margin: 0; height: 100%; position: relative; }
+    /* Height / width / positioning can be customized for your use case.
+       For demo purposes, we make firepad fill the entire browser. */
+    #firepad-container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body class="pace-done">
+<div id="wrapper">
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+
+
+               <li class="active">
+                    <a href="https://cruz.site44.com/index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Sites</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse in">
+                        <li><a href="https://cruzco.site44.com/drogas.html">Drogas</a></li>
+                        <li><a href="https://cruzco.site44.com/run.html">Run</a></li>
+                        <li><a href="https://cruzco.site44.com/schedule.html">Schedule</a></li>
+                        <li><a href="https://cruz.site44.com/dashboard_2.html">Inspinia</a></li>
+                        <li><a href="https://rawgit.com/vderm9/messenger/master/index.html">Messenger</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="https://cruz.site44.com/index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Bookmarks</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse in" id="bookmark_links">
+                        <li><a field='bookmark_link' href="https://cruz.site44.com/index.html">Wiki</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="https://cruz.site44.com/index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Actions</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse in" id="bookmark_links">
+                        <li>
+                          <input placeholder="bookmark url" class="form-control" type="text" id='bookmark_input'>
+                          <input placeholder="bookmark name" class="form-control" type="text" id='bookmark_name'>
+                          <button field='bookmark_add' type="button" id='bookmark_add_button'>Add</button> 
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="https://cruz.site44.com/index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Links</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse in" id="wiki_links">
+                        <li><a field='wiki_link' href="https://cruz.site44.com/index.html">Wiki</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="page-wrapper" class="gray-bg">
+
+
+
+<div class="row border-bottom">
+        <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" field='refresh' href="#"><i class="glyphicon glyphicon-random"></i> </a>
+
+        </div>
+
+
+        </nav>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="wrapper wrapper-content">
+<div class="container">
+
+<!-- Below is the HTML for the task I'm currently working on -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+      </div>
+      <div class="ibox-content">
+        <span field='current_task_name'></span> <span field='current_task_start_time'></span> <span field='current_task_start_time_elapsed'></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- $("#completed_tasks_this_month_count").html(completed_tasks_this_month_count)
+$("#completed_run_rate").html(completed_run_rate)
+$("#completed_today_goal").html(completed_today_goal)
+$("#completed_tasks_today_count").html(completed_tasks_today_count)
+$("#non_recurring_task_count").html(non_recurring_task_count)
+$("#current_task_average_age").html(current_task_average_age)
+$("#current_task_duration").html(current_task_duration)
+$("#current_task_duration_due_today").html(current_task_duration_due_today)
+$("#current_task_count").html(current_task_count)
+
+ -->
+<!-- Below is the HTML for my metrics-->
+<div class="row">
+  <div class="col-md-2 padding-0">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Completed This Month</h5>
+      </div>
+      <div class="ibox-title">
+        <h1 class="no-margins"><span id='completed_tasks_this_month_count'>-</span></h1>
+        <div class="stat-percent font-bold text-success">Goal:<span id='completed_today_goal'>-</span></div>
+        <small>-</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 padding-0">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Open Tasks</h5>
+      </div>
+      <div class="ibox-title">
+          
+        <h1 class="no-margins"><span id='current_task_count'>-</span></h1>
+        <div class="stat-percent font-bold text-success"></div>
+        <small>Current Task Count</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 padding-0">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Due Today</h5>
+      </div>
+      <div class="ibox-title">
+        <span class="label label-success pull-right"></span>
+          
+        <h1 class="no-margins"><span id='current_tasks_due_today_count'>-</span></h1>
+        <div class="stat-percent font-bold text-success"> </div>
+        <small><span id='current_task_duration_due_today'>-</span> minutes</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Non Recurring Tasks</h5>
+      </div>
+      <div class="ibox-title">
+        <h1 class="no-margins"><span id='non_recurring_task_count'>-</span></h1>
+        <div class="stat-percent font-bold text-success">Goal: 26</div>
+        <small>-</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Completed Today</h5>
+      </div>
+      <div class="ibox-title">
+        <h1 class="no-margins"><span id='completed_tasks_today_count'>-</span></h1>
+        <div class="stat-percent font-bold text-success">-</div>
+        <small>-</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Age of Non Recurring</h5>
+      </div>
+      <div class="ibox-title">
+        <h1 class="no-margins"><span id='current_task_average_age'>-</span></h1>
+        <div class="stat-percent font-bold text-success"></div>
+        <small>-</small>
+          
+      </div>
+    </div>
+  </div>
+    
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Completed Task Trend</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+          <a class="close-link">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ibox-content" style="display: none;">
+        <canvas id="goal_bar_chart" height="100"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Completed Task by Day</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+          <a class="close-link">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ibox-content" style="display: none;">
+        <canvas id="completed_bar_chart" height="100"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-6">
+      <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Journal</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+          <a class="close-link">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ibox-content" style="display: none;height:150px">
+        <div id="firepad-container" ></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+      <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Habits (<span id="habits_percentage_complete"></span>)</h5> 
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+          <a class="close-link">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ibox-content pre-scrollable" style="display: none;height:150px">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Check Email</span>
+                </td>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Finance</span>
+                </td>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Clean Room</span>
+                </td>
+            </tr>
+            <tr>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Meditate</span>
+                </td>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Read</span>
+                </td>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Exercise</span>
+                </td>
+            </tr>
+            <tr>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Reflect</span>
+                </td>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Plan</span>
+                </td>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Aesop</span>
+                </td>
+            </tr>
+            <tr>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Lead</span>
+                </td>
+                <td field='habit_item'>
+                    <button type="button" class="btn m-r-sm">-</button>
+                    <span field='habit_text'>Social</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Below is the main table-->
+
+<div class="row">
+  <div class="col-md-12">
+      <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Task List</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+          <a class="close-link">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ibox-content">
+      <div>
+          Toggle column: <a class="toggle-vis" data-column="0">Title</a> - <a class="toggle-vis" data-column="1">Recurrence</a> - <a class="toggle-vis" data-column="2">Due</a> - <a class="toggle-vis" data-column="3">Created</a> - <a class="toggle-vis" data-column="4">Age</a> - <a class="toggle-vis" data-column="5">Duration</a>- <a class="toggle-vis" data-column="6">Priority</a>- <a class="toggle-vis" data-column="6">Score</a>- <a class="toggle-vis" data-column="7">Actions</a>
+        </div>
+          <table id="todoist_table_list" class="display" cellspacing="0" width="100%">
+           <thead>
+            <tr>
+             <th>Title</th>
+             <th>Priority</th>
+             <th>Due Date</th>
+             <th>Date Added</th>
+             <th>Age</th>
+             <th>Duration</th>
+             <th>Priority</th>
+             <th>Score</th>
+             <th>Actions</th>
+           </tr>
+         </thead>
+         <tbody id="todoist_table_list_tbody">
+            <tr>
+              <td field='task_name'><a href="" field="task_link">Title </a></td>
+              <td field='task_priority'>Recurrence</td>
+              <td field='task_due_date'>Due Date</td>
+              <td field='task_created_date'>Date Added</td>
+              <td field='age'>Age</td>
+              <td field='duration'>Duration</td>
+              <td field='priority'>Priority</td>
+              <td field='score'>Score</td>
+
+              <td>
+              <button class="btn btn-sm btn-primary pull-right m-t-n-xs" field='delete_task' type="submit"><strong>Delete</strong></button>
+              <button class="btn btn-sm btn-primary pull-right m-t-n-xs" field='start_timer' type="submit"><strong>Start</strong></button>
+              <button class="btn btn-sm btn-danger pull-right m-t-n-xs" field='stop_timer' type="submit"><strong>Stop</strong></button>
+              </td>
+            </tr>
+         </tbody>
+       </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+<script>
+
+
+//init()
+
+//Initialize Firebase 
+firebase.initializeApp({databaseURL: "https://shippy-ac235.firebaseio.com/"});
+var dbRef = firebase.database();
+var archived_tasks = dbRef.ref('archived_tasks');
+var contactsRef = dbRef.ref('todoist_tasks_times');
+var timer_instance = contactsRef.child('current_timer')
+var historical_times = contactsRef.child('historical_times')
+
+var misc_ref = dbRef.ref('misc');
+var bookmarks_firebase_reference = misc_ref.child('bookmarks')
+//https://shippy-ac235.firebaseio.com/todoist_snapshots/completed.json
+var snapshot_ref = dbRef.ref('todoist_snapshots');
+var snapshot_ref_completed = snapshot_ref.child('completed')
+var snapshot_ref_current = snapshot_ref.child('current')
+
+
+    function getExampleRef() {
+      var ref = firebase.database().ref();
+      var hash = 'cruz_control'
+      if (hash) {
+        ref = ref.child(hash);
+      } else {
+        ref = ref.push(); // generate unique location.
+        window.location = window.location + '#' + ref.key; // add it as a hash to the URL.
+      }
+     
+      return ref;
+    }
+    function init() {
+      var firepadRef = getExampleRef();
+      var codeMirror = CodeMirror(document.getElementById('firepad-container'), {lineNumbers: true,mode: 'javascript'});
+      var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {defaultText: 'test'});
+    }    
+
+
+init()
+
+//run task timer 
+function running_task_timer(timer_instance_dictionary){
+    var now = moment().valueOf()  //now is the time right now
+    start_time_instance = moment(timer_instance_dictionary.start_time).valueOf()
+    var elapsed = now - start_time_instance;
+    time_text_value = moment(elapsed).subtract({hours: 19}); //have to subtract 19 hours for some reason
+    time_text = time_text_value.format("HH:mm:ss")
+    $("span[field='current_task_start_time_elapsed']").html(time_text)
+  }
+
+//check if there is any currently running tasks
+// if there is a task, start the timer with setinterval
+timer_instance.on('value', function(snapshot) {
+  timer_instance_dictionary = snapshot.val()
+  if (timer_instance_dictionary != null){
+    $("span[field='current_task_name']").html(timer_instance_dictionary.content)
+    timer_interval =  setInterval(running_task_timer,1000,timer_instance_dictionary)
+  }
+});
+
+
+//todoist functions
+//pull todoist tasks
+function todoist_current_tasks_pull(){
+ return $.ajax({
+      type: "GET",
+      url: 'https://en.todoist.com/api/v7/sync/',
+      dataType: 'json',
+      async: false,
+      data: {
+        'token': 'a14f98a6b546b044dbb84bcd8eee47fbe3788671',
+        'sync_token':'*',
+        'resource_types':'["items","labels","projects"]'
+      }
+    }).responseJSON
+}
+
+function todoist_delete_task(task_id){
+  $.ajax({
+      type: "GET",
+      url: 'https://en.todoist.com/api/v7/sync/',
+      dataType: 'json',
+      async: false,
+      data: {
+        'token': 'a14f98a6b546b044dbb84bcd8eee47fbe3788671',
+        'sync_token':'*',
+        'resource_types':'["items"]',
+        'commands':'[{"type": "item_delete", "uuid": "f8539c77-7fd7-4846-afad-3b201f0be8a5", "args": {"ids": ['+String(task_id)+']}}]'
+      }
+    })
+}
+
+
+function todoist_completed_tasks_with_offset(offset) {
+    results = $.ajax({
+      type: "GET",
+      url: 'https://en.todoist.com/api/v7/completed/get_all',
+      dataType: 'json',
+      async: false,
+      data: {
+        'token': 'a14f98a6b546b044dbb84bcd8eee47fbe3788671',
+        'since': '2017-12-30T10:00',
+        'limit':'50',
+        'offset':offset
+      }
+    });
+    return results.responseJSON.items
+  }
+
+
+//Since todoist only lets you pull 50 tasks at a time, we're going to use a loop to get the first 50, then the second 50, then the third 50 tasks, etc. 
+//when it's pulling empty lists, it can stop 
+//we're going to use a while loop here (read more here: https://www.w3schools.com/js/js_loop_while.asp)
+function todoist_completed_tasks_all(){
+  todoist_tasks_pulled = []
+  iterator = 0 
+  master_list = []
+  while (todoist_tasks_pulled.length == 50|| iterator==0) { //if todoist pulls 50 tasks, then it should try again. when it pulls less, we know that it's the last loop we need to do. since the first loop will be less than 50 tasks length, i put in or clause that is iterator is 0 which will only be when it does the first loop
+    limit_variable = 50 * iterator //this will go into the todoist completed tasks query
+    todoist_tasks_pulled = todoist_completed_tasks_with_offset(limit_variable)//this is the list of tasks 
+    master_list = master_list.concat(todoist_tasks_pulled)
+    iterator += 1; //this will be 1 in the first loop, 2 in the second loop, etc. 
+  }
+  return master_list
+}
+
+//todoist_dictionary.completed_date
+//"MM"
+//determines if the date is this month, or today, etc. based on what strf is 
+function date_range_filter(date_input,strf){
+    if (date_input){
+      this_month = moment().format(strf) //01
+
+      completed_date_moment = new moment(date_input)
+      completed_month = completed_date_moment.format(strf)
+
+
+      return completed_month === this_month
+    }
+}
+
+//filter functions on the array
+//determine if todoist dictionary is recurring
+function filter_recurring_tasks(dictionary_object){
+  date_string = dictionary_object.date_string
+  date_string = date_string || ''
+  is_recurring = date_string.indexOf('every') != -1
+  return !is_recurring
+}
+
+function age_calculate_from_todoist_task(D){
+    date_added = D.date_added
+    a = new moment()
+    b = new moment(date_added)
+    age_days = a.diff(b,'days')
+    return age_days
+}
+
+function deadline_calculate_from_todoist_task(D){
+    date_added = D.due_date_utc
+    date_added = date_added || new Date()
+    a = new moment()
+    b = new moment(date_added)
+    age_days = b.diff(a,'days')
+    return age_days
+}
+
+//toodoist custom functions 
+function current_task_average_age(array){
+  //https://momentjs.com/docs/
+  age_sum = 0
+  array.forEach(function(D,index){
+    date_added = D.date_added
+    a = new moment()
+    b = new moment(date_added)
+    age_days = a.diff(b,'days')
+
+    age_sum = age_sum + age_days
+    //ages.push(age_days)
+  })
+  denom = array.length 
+  avg = age_sum/denom 
+  return avg 
+}
+
+//used to sum up the total amount of minutes or hours current tasks add up to 
+function aggregate_sum_array(array,key){
+  total = 0
+  array.forEach(function(D,index){
+    key_value = D[key]
+    key_value_float = parseFloat(key_value) || 0 //if it cant convert to a float, return 0
+    total = total + key_value_float
+  })
+  return total 
+}
+
+
+function median(values) {
+    values.sort( function(a,b) {return a - b;} );
+    var half = Math.floor(values.length/2);
+    if(values.length % 2)
+        return values[half];
+    else
+        return (values[half-1] + values[half]) / 2.0;
+}
+
+function daysInMonth (month, year) {
+    return new Date(year, month, 0).getDate();
+}
+
+function days_this_month(){
+  r = new Date()
+  return daysInMonth(r.getMonth()+1,r.getYear())
+}
+
+function metric_run_rate(metric){
+  r = new Date()
+  metric_per_day = metric/r.getDate()
+  run_rate = metric_per_day * days_this_month()
+  return run_rate
+}
+
+function today_goal_based_on_month_pace(goal_metric){
+  metric_per_day = goal_metric/days_this_month()
+  r = new Date()
+  run_rate = metric_per_day * r.getDate()
+  return run_rate
+}
+
+
+
+function current_task_median_age(array){
+  values_list = []
+    array.forEach(function(D,index){
+    date_added = D.date_added
+    a = new moment()
+    b = new moment(date_added)
+    age_days = a.diff(b,'days')
+    values_list.push(age_days)
+})
+return median(values_list)
+
+
+}
+
+function array_to_dictionary(array){
+  new_dict = {}
+  array.forEach(function(item,index){
+    new_dict[String(item.id)] = item
+  })
+  return new_dict
+}
+
+function label_minute_string_to_integer_append(label_dictionary){
+  label_string = label_dictionary.name
+  label_parsed = label_string.replace("min","")
+  potential_integer = parseInt(label_parsed)
+  is_word = isNaN(potential_integer)
+  if (is_word){
+    potential_integer =  0
+    return potential_integer
+  }
+  else {
+    return potential_integer
+  }
+  //label_dictionary['minute'] == potential_integer
+}
+
+//gets the duration from the task of how long expected to gtake
+function labels_add_from_labels_dictionary(labels_list,labels_dictionary){
+  label_list_is_undefined = labels_list == undefined
+  if (label_list_is_undefined){
+    return 0 
+  }
+  r = 0 
+  labels_list.forEach(function(item,index){
+    label_dict = labels_dictionary[item]
+    minute_number = label_minute_string_to_integer_append(label_dict)//label_dict.minute 
+    r = r + minute_number
+  })
+  return r 
+}
+function score_calculate_from_todoist_task(item){
+  duration =item.duration  + 1
+  if (item.type == 'non-recurring'){
+      age = item.age
+  }
+  else {
+age = 0
+  }
+  priority = item.priority
+  days_remaining = item.days_remaining + 1
+  score = 1/duration + age + priority + 1/days_remaining
+  score = parseInt(score)
+  return score
+}
+
+function task_detail_append_dictionary(item,labels_dictionary,projects_dictionary){
+  if (filter_recurring_tasks(item)){
+    item['type'] = 'non-recurring'
+  }
+  else {
+    item['type'] = 'recurring'}
+  item['duration'] = labels_add_from_labels_dictionary(item.labels,labels_dictionary)
+  item['age'] = age_calculate_from_todoist_task(item)
+  item['days_remaining'] = deadline_calculate_from_todoist_task(item)
+  item['score'] = score_calculate_from_todoist_task(item)
+  return item 
+}
+
+
+//add custom values to the current tasks
+function task_detail_append_array(array,labels_dictionary,projects_dictionary){
+  l = []
+  array.forEach(function(item,index){
+      item = task_detail_append_dictionary(item,labels_dictionary,projects_dictionary)
+      l.push(item)
+    })
+  return l 
+}
+
+//this creates an html link from the task dictionary from todoist
+function html_link_from_todoist_task_dictionary(todoist_object_dictionary){
+  task_title = todoist_object_dictionary.content // this is the title of the task 
+  task_id = todoist_object_dictionary.id
+  url = 'https://en.todoist.com/app?lang=en#task%2F'+String(task_id)
+  html = "<a href='" + url + "'>" + task_title + "</a>"
+  return html 
+}
+
+//create the table
+function table_generate_from_json(array,table_id){
+  table_html=""
+  function create_table_row(item,index){
+      $("td[field='task_name']").html(html_link_from_todoist_task_dictionary(item))
+      $("td[field='task_priority']").html(item.type)
+      $("td[field='task_due_date']").html(moment(item.due_date_utc).format("MM-DD"))
+      $("td[field='task_created_date']").html(moment(item.date_added).format("MM-DD"))
+      $("td[field='age']").html(item.age)
+      $("td[field='duration']").html(item.duration)
+      $("td[field='priority']").html(item.priority)
+      $("td[field='score']").html(item.score)
+
+      $("tr").attr('id',item.id)
+      table_html=table_html+$(table_id).html()
+    }
+    array.forEach(create_table_row)         
+    $(table_id).html(table_html)
+  }
+
+//todoist_table_list
+function todoist_task_list_generate(array){
+  table_generate_from_json(array,'#todoist_table_list_tbody')
+}
+
+try {
+  completed_tasks = todoist_completed_tasks_all()
+  current_tasks_base = todoist_current_tasks_pull() 
+
+}
+catch(err) {
+completed_tasks = firebase_todoist_completed_tasks_all()
+current_tasks_base = firebase_todoist_current_tasks_all()
+
+}
+
+
+
+
+
+function firebase_todoist_completed_tasks_all(){
+  l = $.ajax({
+    url: "https://shippy-ac235.firebaseio.com/todoist_snapshots/completed.json",
+    method: "GET",
+    async:false,
+    headers: {"Accept":"application/json; odata=verbose"}
+  })
+  results = l.responseJSON
+  return results
+}
+
+
+function firebase_todoist_current_tasks_all(){
+  l = $.ajax({
+    url: "https://shippy-ac235.firebaseio.com/todoist_snapshots/current.json",
+    method: "GET",
+    async:false,
+    headers: {"Accept":"application/json; odata=verbose"}
+  })
+  results = l.responseJSON
+  return results
+}
+
+// completed_tasks = completed_tasks||firebase_todoist_completed_tasks_all()
+// current_tasks_base = current_tasks_base||firebase_todoist_current_tasks_all()
+
+// completed_tasks = firebase_todoist_completed_tasks_all()
+// current_tasks_base = firebase_todoist_current_tasks_all()
+
+
+//pull current tasks
+current_tasks = current_tasks_base.items 
+labels_dictionary = current_tasks_base.labels
+labels_dictionary = array_to_dictionary(labels_dictionary) 
+projects_dictionary = current_tasks_base.projects 
+current_tasks = task_detail_append_array(current_tasks,labels_dictionary,projects_dictionary)
+current_tasks_dictionary = array_to_dictionary(current_tasks)
+todoist_task_list_generate(current_tasks)
+
+
+//https://shippy-ac235.firebaseio.com/todoist_snapshots/completed.json
+
+
+
+
+
+
+//filters are here 
+completed_tasks_this_month = completed_tasks.filter(function(D){return date_range_filter(D.completed_date,'MM')})
+completed_tasks_today = completed_tasks.filter(function(D){return date_range_filter(D.completed_date,'YY-MM-DD')})
+current_tasks_due_today = current_tasks.filter(function(D){return date_range_filter(D.due_date_utc,'YY-MM-DD')})
+non_recurring_tasks = current_tasks.filter(filter_recurring_tasks)
+
+
+
+//metric calculations are below 
+completed_tasks_this_month_count = completed_tasks_this_month.length
+completed_run_rate = metric_run_rate(completed_tasks_this_month_count)
+completed_today_goal = today_goal_based_on_month_pace(500)
+completed_tasks_today_count = completed_tasks_today.length
+current_tasks_due_today_count = current_tasks_due_today.length
+current_task_count = current_tasks.length
+non_recurring_task_count = non_recurring_tasks.length 
+current_task_average_age = parseInt(current_task_average_age(non_recurring_tasks))
+current_task_duration = aggregate_sum_array(current_tasks,'duration')
+current_task_duration_due_today = aggregate_sum_array(current_tasks_due_today,'duration')
+
+
+$("#completed_tasks_this_month_count").html(completed_tasks_this_month_count)
+$("#completed_run_rate").html(completed_run_rate)
+$("#completed_today_goal").html(parseInt(completed_today_goal))
+$("#completed_tasks_today_count").html(completed_tasks_today_count)
+$("#non_recurring_task_count").html(non_recurring_task_count)
+$("#current_task_average_age").html(current_task_average_age)
+$("#current_task_duration").html(current_task_duration)
+$("#current_task_duration_due_today").html(current_task_duration_due_today)
+$("#current_task_count").html(current_task_count)
+$("#current_tasks_due_today_count").html(current_tasks_due_today_count)
+
+
+
+
+//button commands
+function end_timer(){
+  if (timer_instance_dictionary != null){
+  timer_instance_dictionary['end_time'] = moment().format()
+  historical_times.push(timer_instance_dictionary)
+  timer_instance.set({})
+  clearInterval(timer_interval)
+  }
+}
+
+
+
+$("a[field='refresh']").click( function(){
+  snapshot_ref_completed.set(completed_tasks)
+  snapshot_ref_current.set(current_tasks_base)
+  alert("refreshed")
+})
+
+
+$("button[field='start_timer']").click( function(){
+    end_timer()
+    task_id = $(this).closest("tr").attr("id")
+    upload_dictionary = current_tasks_dictionary[String(task_id)]
+    upload_dictionary['start_time'] = moment().format()
+    upload_dictionary['task_id'] = task_id
+    timer_instance.set(upload_dictionary)
+})
+
+$("button[field='stop_timer']").click( function(){
+  end_timer()
+})
+
+$("button[field='delete_task']").click( function(){
+    task_id = $(this).closest("tr").attr("id")
+    upload_dictionary = current_tasks_dictionary[String(task_id)]
+    upload_dictionary['deleted_time'] = moment().format()
+    archived_tasks.push(upload_dictionary)
+    todoist_delete_task(task_id)
+    alert(task_id)
+})
+
+
+//loop through the habits table 
+habits_completed = 0
+habits_total = 0
+$("td[field='habit_item']").each(function(){
+    habit_text = $(this).find("span[field='habit_text']").html().toLowerCase()
+    habit_array = completed_tasks.filter(function(D){return D.content.toLowerCase().indexOf(habit_text) != -1})
+    habit_count = habit_array.length
+
+    $(this).find("button").html(habit_count)
+    habit_array_completed_today = habit_array.filter(function(D){return date_range_filter(D.completed_date,'YY-MM-DD')})
+    completed_at_least_one_today = habit_array_completed_today.length > 0 
+
+    if (completed_at_least_one_today){
+      $(this).find("button").addClass("btn-primary")
+      habits_completed = habits_completed + 1
+    }
+      habits_total = habits_total + 1
+
+})
+habits_completed_text = String(habits_completed) + "/" + String(habits_total)
+$("#habits_percentage_complete").html(habits_completed_text)
+
+
+//calculate habits completed
+
+
+
+$("button[field='bookmark_add']").click( function(){
+    bookmark_dictionary = {}
+    bookmark_link = $("#bookmark_input").val()
+    bookmark_name = $("#bookmark_name").val()
+    bookmark_dictionary['name'] = bookmark_input_name
+    bookmark_dictionary['timestamp'] = moment().format()
+    bookmark_dictionary['url'] = bookmark_link
+    alert(bookmark_name+ " : " + bookmark_link)
+
+    //bookmarks_firebase_reference.push(bookmark_dictionary)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//the below functions is relevant to the creation of the charts
+function line_chart_create(x_axis_labels,y_axis_values,chart_name,second_y_axis_values,third_y_axis_values){
+    var lineData = {
+        labels:x_axis_labels,
+        datasets: [
+
+        {label: chart_name, 
+      type: 'bar',
+        backgroundColor: 'rgba(26,179,148,0.5)', 
+        borderColor: "rgba(26,179,148,0.7)", 
+        pointBackgroundColor: 
+        "rgba(26,179,148,1)", 
+        pointBorderColor: "#fff", 
+        data:y_axis_values }
+
+
+        ]};
+      var lineOptions = {
+        responsive: true
+    };
+    var ctx = document.getElementById('completed_bar_chart').getContext("2d");
+    new Chart(ctx, { type: 'bar',data: lineData, options:lineOptions});
+
+
+
+  var lineData = {
+        labels:x_axis_labels,
+        datasets: [
+
+        {label: chart_name, 
+      type: 'bar',
+        backgroundColor: 'rgba(26,179,148,0.5)', 
+        borderColor: "rgba(26,179,148,0.7)", 
+        pointBackgroundColor: 
+        "rgba(26,179,148,1)", 
+        pointBorderColor: "#fff", 
+        data:y_axis_values },
+
+        {label: 'second', 
+      type: 'line',
+
+        backgroundColor: 'rgba(26,179,148,0.5)', 
+        borderColor: "rgba(26,179,148,0.7)", 
+        pointBackgroundColor: 
+        "rgba(26,179,148,1)", 
+        pointBorderColor: "#fff", 
+        data:second_y_axis_values },
+
+
+        {label: 'third', 
+        type: 'line',
+        backgroundColor: 'rgba(26,179,148,0.5)', 
+        borderColor: "rgba(26,179,148,0.7)", 
+        pointBackgroundColor: 
+        "rgba(26,179,148,1)", 
+        pointBorderColor: "#fff", 
+        data:third_y_axis_values }
+
+
+        ]};
+      var lineOptions = {
+        responsive: true
+    };
+    var ctx = document.getElementById(chart_name).getContext("2d");
+
+    new Chart(ctx, { type: 'bar',data: lineData, options:lineOptions});
+}
+
+
+function array_filter_by_date_function(array,moment_date_object){
+  function date_is_equal_function(item){
+    item_time_stamp = item.completed_date
+    due_date_moment = new moment(item_time_stamp)
+    due_date_moment_date = due_date_moment.format("Y-MM-DD")
+    moment_date_object_formatted = moment_date_object.format("Y-MM-DD") 
+    result =  moment_date_object_formatted == due_date_moment_date
+    return result
+  }
+  filtered_array = array.filter(date_is_equal_function)
+  return filtered_array 
+}
+
+//the below creates the two charts (but needs to be better written)
+function line_charts_generate(firebase_data,dates_list){
+  y_axis_list = []
+  x_axis_list = []
+  second_y_axis = []
+  third_y_axis=[]
+  third_y_axis_number = 0
+  goal_increment = 500/dates_list.length
+  running_total_y_axis = 0
+  dates_list.forEach(function(item,index){
+    item.add(1, 'day')
+    filtered_array = array_filter_by_date_function(firebase_data,item)
+    y_axis_length = filtered_array.length 
+    y_axis_list.push(y_axis_length)
+    running_total_y_axis = running_total_y_axis + y_axis_length
+    second_y_axis.push(running_total_y_axis)
+    date_format = item.format("Y-MM-DD (dd)")
+    x_axis_list.push(date_format)
+    third_y_axis_number = third_y_axis_number + goal_increment
+    third_y_axis.push(third_y_axis_number)
+  })
+  line_chart_create(x_axis_list,y_axis_list,'goal_bar_chart',second_y_axis,third_y_axis)
+}
+
+
+//this function creates a list of dates in the current month
+//todo: move this to jutility
+function dates_within_this_month(){
+    days = moment().daysInMonth();
+    today = new Date()
+    month = String(today.getMonth()+1)
+    year = String(today.getFullYear())
+    date_string = year + "-" + month + "-01"
+    start_time = moment(date_string)
+    hours_list = []
+    for (i = 0; i < days; i++) { 
+        next_time = start_time.clone()
+        next_time.add(i,'day')
+        hours_list.push(next_time)
+
+    }
+    return hours_list
+  } 
+
+
+//the below function creates two charts using chartjs
+//first create the x-axis (or rather the dates that will be on the x axis)
+dates_this_month =  dates_within_this_month()
+line_charts_generate(completed_tasks,dates_this_month)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//create the set of links
+function wiki_links_generate_from_json(array,table_id){
+  table_html=""
+  function create_table_row(item,index){
+      link_object = $("a[field='wiki_link']")
+      url = "http://cruzco.site44.com/wiki.html?id=" + item 
+      link_object.attr('href',url)
+      link_object.attr('target',"_blank")
+      link_object.html(item)
+      table_html=table_html+$(table_id).html()
+    }
+    array.forEach(create_table_row)         
+    $(table_id).html(table_html)
+  }
+
+//below genarates wiki links on the left side of panel 
+function wiki_links_json(){
+  l = $.ajax({
+    url: "https://shippy-ac235.firebaseio.com/wiki.json?shallow=true",
+    method: "GET",
+    async:false,
+    headers: {"Accept":"application/json; odata=verbose"}
+  })
+  results = l.responseJSON
+  keys = Object.keys(results)
+  return keys
+}
+wiki_link_names = wiki_links_json() //get the keys
+wiki_links_generate_from_json(wiki_link_names,'#wiki_links')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//turn the html table into a data table that can be sorted
+var table = $('#todoist_table_list').DataTable(  {"pageLength": 100,
+  "columnDefs": [
+    { "visible": false, "targets": [1,2,3,4,5,6,7] }
+  ]
+
+}
+
+
+);
+
+
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+    } );
+
+
+</script>
+</body>
+</html>
